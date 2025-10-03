@@ -4,7 +4,7 @@ import { FixedStatus, type AppMeta } from "../../types";
 export const VisualStudioCodeInsiders: AppMeta = {
   icon: "https://cdn.brandfetch.io/idIkI_7uw6/w/128/h/128/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756787305385",
   id: "visual-studio-code-insiders",
-  friendlyName: "Visual Studio Code",
+  friendlyName: "Visual Studio Code (Insiders)",
   twitter: "code",
   async checkIsFixed() {
     const url =
