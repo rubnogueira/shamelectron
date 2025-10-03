@@ -18,6 +18,7 @@ import { Windsurf } from "./windsurf";
 import { Beeper } from "./beeper";
 import { OnePassword } from "./1password";
 import { Bitwarden } from "./bitwarden";
+import { Obsidian } from "./obsidian";
 
 import type { AppMeta } from "../../types";
 
@@ -42,5 +43,6 @@ export const APPS: AppMeta[] = [
   Beeper,
   Bruno,
   Bitwarden,
+  Obsidian,
 ];
 export default APPS;
