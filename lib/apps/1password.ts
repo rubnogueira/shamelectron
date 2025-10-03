@@ -7,7 +7,8 @@ export const OnePassword: AppMeta = {
   friendlyName: "1Password",
   twitter: "1Password",
   async checkIsFixed() {
-    const url = "https://downloads.1password.com/mac/1Password.zip";
+    const url =
+      "https://downloads.1password.com/mac/1Password-latest-aarch64.zip";
     const pat = "_cornerMask";
     const result: { found: boolean; pos?: number } | null | undefined =
       await findPattern(url, pat);
