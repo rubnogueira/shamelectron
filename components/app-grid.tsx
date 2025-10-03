@@ -81,6 +81,12 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
                   <div className="text-sm font-mono font-medium bg-yellow-300 text-black rounded px-2 py-0.5 inline-block shadow-sm">
                     <TimeAgo updatedAt={dateTime} />
                   </div>
+                  <div className="text-xs text-gray-300 font-mono mt-1 opacity-80 mt-2">
+                    updates automatically every{" "}
+                    <span className="underline decoration-dashed underline-offset-4">
+                      12 hours
+                    </span>
+                  </div>
                 </div>
               </div>
 
