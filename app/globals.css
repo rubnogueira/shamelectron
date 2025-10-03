@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .border-dashed-subtle {
+    border-color: #1a1a1a;
+  }
+
+  .text-muted {
+    color: #666666;
+  }
+
+  .text-subtle {
+    color: #999999;
+  }
+}
