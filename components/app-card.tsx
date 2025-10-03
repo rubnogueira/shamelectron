@@ -62,7 +62,7 @@ export function AppRow({ app }: { app: AppRecord }) {
 
       {/* Twitter Link */}
       <div className="text-center">
-        {app.twitter && (
+        {app.twitter && app.isFixed === FixedStatus.NOT_FIXED && (
           <Link
             href={
               `https://x.com/intent/tweet?text=` +
