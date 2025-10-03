@@ -1,6 +1,6 @@
-import { VisualStudioCode } from "./lib/apps/visual-studio-code";
+import { Bruno } from "./lib/apps/bruno";
 
-const app = VisualStudioCode;
+const app = Bruno;
 
 const result = await app.checkIsFixed();
 
