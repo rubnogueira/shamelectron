@@ -1,3 +1,5 @@
+<img src="./public/og-image.png" />
+
 # shamelectron
 
 Tracking problematic Electron apps on macOS Tahoe.
