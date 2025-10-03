@@ -38,7 +38,7 @@ jobs:
       - name: Install lzfse
         run: |
           sudo apt-get update
-          sudo apt-get install -y liblzfse-dev
+          sudo apt-get install -y lzfse
 
       - name: Install dependencies
         run: bun install --frozen-lockfile

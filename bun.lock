@@ -13,7 +13,6 @@
         "@types/react-dom": "^19.2.0",
         "@types/unbzip2-stream": "^1.4.3",
         "autoprefixer": "^10.4.19",
-        "babel-plugin-react-compiler": "^19.1.0-rc.3",
         "bplist-parser": "^0.3.2",
         "bzip2": "^0.1.1",
         "class-variance-authority": "^0.7.0",
@@ -32,6 +31,7 @@
       },
       "devDependencies": {
         "@types/node": "^20.14.10",
+        "babel-plugin-react-compiler": "^19.1.0-rc.3",
         "eslint": "^8.57.0",
         "eslint-config-next": "^14.2.5",
         "typescript": "^5.5.3",
