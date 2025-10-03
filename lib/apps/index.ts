@@ -17,6 +17,7 @@ import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
 import { Windsurf } from "./windsurf";
 import { Beeper } from "./beeper";
 import { OnePassword } from "./1password";
+import { Bitwarden } from "./bitwarden";
 
 import type { AppMeta } from "../../types";
 
@@ -40,5 +41,6 @@ export const APPS: AppMeta[] = [
   OnePassword,
   Beeper,
   Bruno,
+  Bitwarden,
 ];
 export default APPS;
