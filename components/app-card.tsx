@@ -75,7 +75,7 @@ export function AppRow({ app }: { app: AppRecord }) {
             className="text-gray-500 hover:text-gray-300 transition-colors text-xs flex items-center gap-1 flex-row"
             aria-label={`Follow ${app.friendlyName} on Twitter`}
           >
-            <span className="text-xs">
+            <span className="sm:text-xs text-[8px]">
               ask <span className="text-white">@{app.twitter}</span> to bump
               Electron
             </span>
