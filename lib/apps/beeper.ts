@@ -1,14 +1,14 @@
 import { findPattern } from "@/lib/findPattern";
 import { FixedStatus, type AppMeta } from "../../types";
 
-export const VisualStudioCode: AppMeta = {
-  icon: "https://cdn.brandfetch.io/idIkI_7uw6/w/128/h/128/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756787305385",
-  id: "visual-studio-code-insiders",
-  friendlyName: "Visual Studio Code (Insider)",
-  twitter: "code",
+export const Beeper: AppMeta = {
+  icon: "https://cdn.brandfetch.io/idbHZntkNh/w/128/h/128/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1714483824721",
+  id: "beeper-stable",
+  friendlyName: "Beeper",
+  twitter: "beeper",
   async checkIsFixed() {
     const url =
-      "https://code.visualstudio.com/sha/download?build=insider&os=darwin-universal";
+      "https://api.beeper.com/desktop/download/macos/arm64/stable/com.automattic.beeper.desktop";
     const pat = "_cornerMask";
     const result: { found: boolean; pos?: number } | null | undefined =
       await findPattern(url, pat);

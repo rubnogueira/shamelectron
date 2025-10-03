@@ -7,6 +7,9 @@ import { Postman } from "./postman";
 import { Signal } from "./signal";
 import { Slack } from "./slack";
 import { VisualStudioCode } from "./visual-studio-code";
+import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
+import { Windsurf } from "./windsurf";
+import { Beeper } from "./beeper";
 import type { AppMeta } from "../../types";
 
 export const APPS: AppMeta[] = [
@@ -19,5 +22,8 @@ export const APPS: AppMeta[] = [
   Signal,
   Slack,
   VisualStudioCode,
+  VisualStudioCodeInsiders,
+  Windsurf,
+  Beeper,
 ];
 export default APPS;
