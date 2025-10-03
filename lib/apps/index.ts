@@ -1,6 +1,7 @@
 import { Claude } from "./claude";
 import { Cluely } from "./cluely";
 import { Cursor } from "./cursor";
+import { Bruno } from "./bruno";
 import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
 import { Figma } from "./figma";
@@ -38,5 +39,6 @@ export const APPS: AppMeta[] = [
   Windsurf,
   OnePassword,
   Beeper,
+  Bruno,
 ];
 export default APPS;
