@@ -3,7 +3,7 @@ const nextConfig = {
   // Enable static export
   output: 'export',
   // Set base path for GitHub Pages
-  basePath: process.env.NODE_ENV === 'production' ? '/shamelectron2' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/shamelectron' : '',
 
   // Allow images from external domains
   images: {
