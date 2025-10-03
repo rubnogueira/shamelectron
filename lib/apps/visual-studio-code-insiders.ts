@@ -8,7 +8,7 @@ export const VisualStudioCodeInsiders: AppMeta = {
   twitter: "code",
   async checkIsFixed() {
     const url =
-      "https://code.visualstudio.com/sha/download?build=insiders&os=darwin-universal";
+      "https://code.visualstudio.com/sha/download?build=insider&os=darwin-universal";
     const pat = "_cornerMask";
     const result: { found: boolean; pos?: number } | null | undefined =
       await findPattern(url, pat);

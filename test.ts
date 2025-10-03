@@ -1,6 +1,6 @@
-import { Notion } from "./lib/apps/notion";
+import { VisualStudioCode } from "./lib/apps/visual-studio-code";
 
-const app = Notion;
+const app = VisualStudioCode;
 
 const result = await app.checkIsFixed();
 
