@@ -1,10 +1,11 @@
 import { AppRecord } from "@/types";
 import { AppRow } from "./app-card";
 import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
+import TimeAgo from "./time-ago";
 
-const updatedAt = new Date();
-const dateTime =
-  new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+const dateTime = new Date(
+  new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
+);
 
 export function AppGrid({ apps }: { apps: AppRecord[] }) {
   const fixedCount = apps.filter((app) => app.isFixed === "fixed").length;
@@ -15,24 +16,13 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
   const totalCount = apps.length;
   const fixedPercentage = Math.round((fixedCount / totalCount) * 100);
 
-  const timeAgo = (() => {
-    const now = new Date();
-    const updated = updatedAt;
-    const diff = Math.floor((now.getTime() - updated.getTime()) / 1000);
-
-    if (diff < 60) return `${diff}s ago`;
-    if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-    if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-    return `${Math.floor(diff / 86400)}d ago`;
-  })();
-
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-3">
           <h1 className="text-2xl font-mono text-white mb-2">shamelectron</h1>
-          <div className="text-muted text-sm font-mono">
+          <div className="text-muted text-sm font-mono mb-6">
             <div>
               Tracking problematic Electron apps macOS Tahoe.
               <div className="text-subtle">
@@ -50,24 +40,79 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-8 flex items-center gap-8 text-xs font-mono">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-400" />
-              <span className="text-muted">
-                {fixedCount} fixed ({fixedPercentage}%)
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <XCircle className="w-4 h-4 text-red-400" />
-              <span className="text-muted">{notFixedCount} not fixed</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-gray-400" />
-              <span className="text-muted">{unknownCount} unknown</span>
+          {/* Elegant Stats Card */}
+          <div className="relative overflow-hidden bg-gradient-to-br from-gray-900/40 to-gray-800/20 border border-gray-700/50 rounded-xl backdrop-blur-sm mb-8">
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent"></div>
+
+            <div className="relative p-8">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-sm font-mono text-white/90 uppercase tracking-[0.15em] mb-1">
+                    Status Overview
+                  </h2>
+                  <div className="text-xs text-gray-400 font-mono">
+                    {totalCount} total applications tracked
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-gray-400 font-mono mb-2 uppercase tracking-wide">
+                    Last updated
+                  </div>
+                  <div className="text-sm font-mono font-medium bg-yellow-300 text-black rounded px-2 py-0.5 inline-block shadow-sm">
+                    <TimeAgo updatedAt={dateTime} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center gap-12">
+                <div className="text-center">
+                  <div className="text-3xl font-mono text-emerald-400 font-light">
+                    {fixedCount}
+                  </div>
+                  <div className="text-xs text-gray-500 font-mono mt-1">
+                    fixed
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-3xl font-mono text-red-400 font-light">
+                    {notFixedCount}
+                  </div>
+                  <div className="text-xs text-gray-500 font-mono mt-1">
+                    not fixed
+                  </div>
+                </div>
+
+                {unknownCount > 0 && (
+                  <div className="text-center">
+                    <div className="text-3xl font-mono text-gray-400 font-light">
+                      {unknownCount}
+                    </div>
+                    <div className="text-xs text-gray-500 font-mono mt-1">
+                      unknown
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </header>
+
+        {/* Developer Notice */}
+        <div className="mb-8 p-4 bg-gray-900/30 border border-gray-700/30 rounded-lg">
+          <div className="text-center">
+            <div className="text-sm text-gray-300 font-mono mb-2">
+              Are you an Electron app developer?
+            </div>
+            <div className="text-xs text-gray-400 font-mono">
+              Bump Electron to at least versions{" "}
+              <span className="text-emerald-400">v38.2.0</span>,{" "}
+              <span className="text-emerald-400">v37.6.0</span> and{" "}
+              <span className="text-emerald-400">v36.9.2</span>
+            </div>
+          </div>
+        </div>
 
         {/* Table Header */}
         <div className="mb-4">
@@ -97,17 +142,6 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
             <AppRow key={app.id} app={app} />
           ))}
         </div>
-
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-800">
-          <div className="text-center">
-            <div className="mt-1 text-xs text-subtle font-mono">
-              last updated:{" "}
-              <pre className="inline text-white/20">{dateTime}</pre> (
-              <pre className="inline text-white/90">{timeAgo}</pre>)
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );

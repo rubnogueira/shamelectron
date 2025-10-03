@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AppRecord, FixedStatus } from "@/types";
 import { CheckCircle2, XCircle, HelpCircle, TwitterIcon } from "lucide-react";
+import Link from "next/link";
 
 function StatusIndicator({ status }: { status: FixedStatus }) {
   const getStatusDisplay = () => {
@@ -60,17 +61,26 @@ export function AppRow({ app }: { app: AppRecord }) {
       </div>
 
       {/* Twitter Link */}
-      <div className="w-8 text-center">
+      <div className="text-center">
         {app.twitter && (
-          <a
-            href={`https://twitter.com/${app.twitter}`}
+          <Link
+            href={
+              `https://x.com/intent/tweet?text=` +
+              encodeURIComponent(
+                `please bump Electron to fix MacOS 26 performance issue @${app.twitter}`
+              )
+            }
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-gray-300 transition-colors text-xs"
+            className="text-gray-500 hover:text-gray-300 transition-colors text-xs flex items-center gap-1 flex-row"
             aria-label={`Follow ${app.friendlyName} on Twitter`}
           >
-            <TwitterIcon className="w-4 h-4" />
-          </a>
+            <span className="text-xs">
+              ask <span className="text-white">@{app.twitter}</span> to bump
+              Electron
+            </span>
+            <TwitterIcon className="size-4 ml-2" />
+          </Link>
         )}
       </div>
     </div>
