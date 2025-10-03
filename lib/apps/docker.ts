@@ -2,7 +2,7 @@ import { FixedStatus, type AppMeta } from "@/types";
 import { findPattern } from "@/lib/findPattern";
 
 export const DockerDesktop: AppMeta = {
-  icon: "https://cdn.brandfetch.io/id5_eOiB6T/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1707508241645",
+  icon: "https://cdn.brandfetch.io/id5_eOiB6T/w/128/h/128/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1707508241645",
   id: "docker-desktop",
   friendlyName: "Docker Desktop",
   twitter: "docker",
