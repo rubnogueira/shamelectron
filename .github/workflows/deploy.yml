@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   # Run twice daily at 6 AM and 6 PM UTC
   schedule:
-    - cron: '0 6,18 * * *'
+    - cron: "0 6,18 * * *"
   # Also run on push to main branch
   push:
-    branches: [ main ]
+    branches: [main]
   # Allow manual triggering
   workflow_dispatch:
 
@@ -33,7 +33,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: "1.0.0"
+          bun-version: "1.2.3"
 
       - name: Install lzfse
         run: |
