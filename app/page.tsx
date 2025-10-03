@@ -120,5 +120,6 @@ async function getStaticAppsData(): Promise<AppRecord[]> {
 
 export default async function HomePage() {
   const apps = await getStaticAppsData();
+  apps.sort((a, b) => a.friendlyName.localeCompare(b.friendlyName));
   return <AppGrid apps={apps} />;
 }
