@@ -2,8 +2,12 @@ import { Claude } from "./claude";
 import { Cluely } from "./cluely";
 import { Cursor } from "./cursor";
 import { Discord } from "./discord";
+import { DiscordCanary } from "./discord-canary";
+import { Figma } from './figma';
+import { FigmaBeta } from './figma-beta';
 import { GitHubDesktop } from "./github-desktop";
 import { Notion } from "./notion";
+import { PocketCasts } from './pocket-casts'
 import { Postman } from "./postman";
 import { Signal } from "./signal";
 import { Slack } from "./slack";
@@ -18,8 +22,12 @@ export const APPS: AppMeta[] = [
   Cursor,
   Claude,
   Discord,
+  DiscordCanary,
+  Figma,
+  FigmaBeta,
   GitHubDesktop,
   Notion,
+  PocketCasts,
   Postman,
   Signal,
   Slack,
