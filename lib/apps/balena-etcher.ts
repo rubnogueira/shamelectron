@@ -6,7 +6,7 @@ export const BalenaEtcher: AppMeta = {
   icon: "https://cdn.brandfetch.io/id6vfMEozM/w/128/h/128/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1726185885159",
   id: "balena-etcher-stable",
   friendlyName: "Balena Etcher",
-  twitter: "balena_etcher",
+  twitter: "balena_io",
   async checkIsFixed() {
     const url = await fetch(
       "https://api.github.com/repos/balena-io/etcher/releases/latest"
