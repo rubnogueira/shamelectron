@@ -2,6 +2,7 @@ import { AppRecord } from "@/types";
 import { AppRow } from "./app-card";
 import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 import TimeAgo from "./time-ago";
+import { Footer } from "./footer";
 
 const dateTime = new Date(
   new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
@@ -17,8 +18,26 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
   const fixedPercentage = Math.round((fixedCount / totalCount) * 100);
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Decorative gradient blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large blob top-left */}
+        <div className="absolute -top-80 -left-80 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent rounded-full blur-3xl"></div>
+
+        {/* Large blob top-right */}
+        <div className="absolute -top-60 -right-60 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-500/10 via-cyan-500/10 to-transparent rounded-full blur-2xl"></div>
+
+        {/* Large blob bottom-left */}
+        <div className="absolute -bottom-40 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-pink-500/10 via-red-500/10 to-transparent rounded-full blur-2xl"></div>
+
+        {/* Large blob bottom-right */}
+        <div className="absolute -bottom-60 -right-40 w-[700px] h-[700px] bg-gradient-to-tl from-yellow-500/10 via-orange-500/10 to-transparent rounded-full blur-3xl"></div>
+
+        {/* Massive center blob */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-pink-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 py-12 relative z-10">
         {/* Header */}
         <header className="mb-3">
           <h1 className="text-2xl font-mono text-white mb-2">shamelectron</h1>
@@ -142,6 +161,9 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
             <AppRow key={app.id} app={app} />
           ))}
         </div>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );
