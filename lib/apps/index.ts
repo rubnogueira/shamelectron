@@ -19,6 +19,7 @@ import { Beeper } from "./beeper";
 import { OnePassword } from "./1password";
 import { Bitwarden } from "./bitwarden";
 import { Obsidian } from "./obsidian";
+import { BalenaEtcher } from "./balena-etcher";
 
 import type { AppMeta } from "../../types";
 
@@ -42,6 +43,7 @@ export const APPS: AppMeta[] = [
   OnePassword,
   Beeper,
   Bruno,
+  BalenaEtcher,
   Bitwarden,
   Obsidian,
 ];
