@@ -27,6 +27,7 @@ import { VisualStudioCode } from "./visual-studio-code";
 import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
 import { LMStudio } from "./lmstudio";
 import { Windsurf } from "./windsurf";
+import { Dropbox } from "./dropbox";
 
 import type { AppMeta } from "../../types";
 
@@ -60,5 +61,6 @@ export const APPS: AppMeta[] = [
   LMStudio,
   Hey,
   GitKraken,
+  Dropbox,
 ];
 export default APPS;
