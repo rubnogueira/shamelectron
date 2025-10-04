@@ -29,7 +29,6 @@ export const APPS: AppMeta[] = [
   Discord,
   DiscordCanary,
   Figma,
-  FigmaBeta,
   GitHubDesktop,
   Notion,
   PocketCasts,
