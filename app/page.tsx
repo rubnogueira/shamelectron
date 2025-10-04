@@ -12,14 +12,15 @@ async function getStaticAppsData(): Promise<AppRecord[]> {
 
   for (const meta of APPS) {
     const status = current.get(meta.id);
+    // no need to refresh if already fixed
+    if (status?.isFixed === FixedStatus.FIXED) {
+      continue;
+    }
     const isUnknown = status?.isFixed === FixedStatus.UNKNOWN;
 
-    // In dev, always refresh. In production (build), refresh if stale.
     const isStale = status?.lastChecked
       ? core.isStale(status.lastChecked)
       : true;
-    // process.env.NODE_ENV === "development" ||
-    // const isStale = true;
 
     if (isUnknown || isStale) {
       console.log(`[QUEUED] Refreshing status for ${meta.friendlyName}...`);
