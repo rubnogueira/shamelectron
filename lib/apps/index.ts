@@ -11,6 +11,7 @@ import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
 import { Figma } from "./figma";
 import { GitHubDesktop } from "./github-desktop";
+import { Logseq } from "./logseq";
 import { Notion } from "./notion";
 import { NotionCalendar } from "./notion-calendar";
 import { NotionMail } from "./notion-mail";
@@ -52,5 +53,6 @@ export const APPS: AppMeta[] = [
   VisualStudioCode,
   VisualStudioCodeInsiders,
   Windsurf,
+  Logseq,
 ];
 export default APPS;
