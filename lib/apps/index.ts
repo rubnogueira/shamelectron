@@ -10,6 +10,7 @@ import { Cluely } from "./cluely";
 import { Cursor } from "./cursor";
 import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
+import { Element } from "./element";
 import { Figma } from "./figma";
 import { GitHubDesktop } from "./github-desktop";
 import { Hey } from "./hey";
@@ -47,6 +48,7 @@ export const APPS: AppMeta[] = [
   Figma,
   GitHubDesktop,
   DockerDesktop,
+  Element,
   Notion,
   NotionCalendar,
   NotionMail,
