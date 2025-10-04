@@ -2,7 +2,6 @@ import { gunzipSync, inflateSync } from "bun";
 import plist from "plist";
 // @ts-expect-error - no types
 import bzip2 from "bzip2";
-
 // Constants
 const SECTOR_SIZE = 512;
 const MAX_CONCURRENT_REQUESTS = 16;
@@ -126,6 +125,26 @@ async function decompressChunk(
       } catch (e) {
         throw new Error(
           `LZFSE not supported (install 'lzfse' CLI) or failed to decode: ${e}`
+        );
+      }
+    }
+    case 0x80000008: {
+      // LZMA - try using 'xz' CLI via Bun.spawnSync (more versatile than lzma)
+      try {
+        const proc = Bun.spawnSync({
+          cmd: ["xz", "-d", "-c"],
+          stdin: compBuf,
+        });
+        if (proc.exitCode === 0 && proc.stdout && proc.stdout.length > 0) {
+          return proc.stdout;
+        }
+        const stderrMsg = proc.stderr
+          ? new TextDecoder().decode(proc.stderr)
+          : "No stderr output";
+        throw new Error(`xz exited with code ${proc.exitCode}: ${stderrMsg}`);
+      } catch (e) {
+        throw new Error(
+          `LZMA not supported (install 'xz' CLI) or failed to decode: ${e}`
         );
       }
     }
@@ -844,7 +863,7 @@ async function findPatternInDmg(
           : t === 0x80000006
           ? "UDBZ(bzip2)"
           : t === 0x80000007
-          ? "LZFSE(unsupported)"
+          ? "LZFSE"
           : `0x${t.toString(16)}`;
       console.log(`  type ${label}: ${count}`);
     }
@@ -1047,7 +1066,8 @@ function isSupportedCompression(entryType: number): boolean {
     entryType === 0x00000001 || // Uncompressed
     entryType === 0x80000005 || // UDZO (zlib)
     entryType === 0x80000006 || // UDBZ (bzip2)
-    entryType === 0x80000007 // LZFSE
+    entryType === 0x80000007 || // LZFSE
+    entryType === 0x80000008 // LZMA
   );
 }
 

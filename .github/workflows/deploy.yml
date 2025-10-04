@@ -35,10 +35,10 @@ jobs:
         with:
           bun-version: "1.2.23"
 
-      - name: Install lzfse
+      - name: Install lzfse and lzma
         run: |
           sudo apt-get update
-          sudo apt-get install -y lzfse
+          sudo apt-get install -y lzfse lzma
 
       - name: Install dependencies
         run: bun install --frozen-lockfile

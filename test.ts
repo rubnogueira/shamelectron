@@ -1,6 +1,6 @@
-import { Bruno } from "./lib/apps/bruno";
+import { DockerDesktop } from "./lib/apps/docker";
 
-const app = Bruno;
+const app = DockerDesktop;
 
 const result = await app.checkIsFixed();
 
