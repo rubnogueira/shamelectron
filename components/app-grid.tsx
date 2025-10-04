@@ -1,8 +1,7 @@
 import { AppRecord } from "@/types";
 import { AppRow } from "./app-card";
-import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
-import TimeAgo from "./time-ago";
 import { Footer } from "./footer";
+import TimeAgo from "./time-ago";
 
 const dateTime = new Date(
   new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
@@ -37,7 +36,7 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-pink-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-12 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
         {/* Header */}
         <header className="mb-3">
           <h1 className="text-2xl font-mono text-white mb-2">shamelectron</h1>
@@ -125,9 +124,9 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
         </header>
 
         {/* Developer Notice */}
-        <div className="mb-8 p-4 bg-gray-900/30 border border-gray-700/30 rounded-lg">
+        <div className="mb-6 sm:mb-8 p-3 sm:p-4 bg-gray-900/30 border border-gray-700/30 rounded-lg">
           <div className="text-center">
-            <div className="text-sm text-gray-300 font-mono mb-2">
+            <div className="text-xs sm:text-sm text-gray-300 font-mono mb-2">
               Are you an Electron app developer?
             </div>
             <div className="text-xs text-gray-400 font-mono">
@@ -141,19 +140,19 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
 
         {/* Table Header */}
         <div className="mb-4">
-          <div className="flex items-center gap-6 py-2 border-b border-gray-800">
-            <div className="w-12">
+          <div className="flex items-center gap-3 sm:gap-6 py-2 border-b border-gray-800">
+            <div className="w-10 sm:w-12">
               <span className="text-xs text-muted font-mono uppercase tracking-wide">
                 status
               </span>
             </div>
-            <div className="w-8"></div>
+            <div className="w-6 sm:w-8"></div>
             <div className="flex-1">
               <span className="text-xs text-muted font-mono uppercase tracking-wide">
                 app
               </span>
             </div>
-            <div className="w-8 text-center">
+            <div className="w-12 sm:w-16 text-center">
               <span className="text-xs text-muted font-mono uppercase tracking-wide">
                 social
               </span>

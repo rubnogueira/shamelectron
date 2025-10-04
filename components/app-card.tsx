@@ -31,21 +31,21 @@ function StatusIndicator({ status }: { status: FixedStatus }) {
 
   return (
     <div
-      className={`w-12 h-12 rounded-lg ${bgColor} flex items-center justify-center border border-gray-800`}
+      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${bgColor} flex items-center justify-center border border-gray-800`}
     >
-      <Icon className={`${color} w-6 h-6`} />
+      <Icon className={`${color} w-5 h-5 sm:w-6 sm:h-6`} />
     </div>
   );
 }
 
 export function AppRow({ app }: { app: AppRecord }) {
   return (
-    <div className="flex items-center gap-6 py-4 border-b border-dashed-subtle border-gray-800 hover:bg-gray-900/20 transition-colors">
+    <div className="flex items-center gap-3 sm:gap-6 py-3 sm:py-4 border-b border-dashed-subtle border-gray-800 hover:bg-gray-900/20 transition-colors">
       {/* Status - Now the main focus */}
       <StatusIndicator status={app.isFixed} />
 
       {/* Icon */}
-      <div className="w-8 h-8 flex-shrink-0">
+      <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
         <Image
           src={app.icon}
           alt={`${app.friendlyName} icon`}
@@ -57,7 +57,9 @@ export function AppRow({ app }: { app: AppRecord }) {
 
       {/* App Name */}
       <div className="flex-1 min-w-0">
-        <span className="text-white text-sm font-mono">{app.friendlyName}</span>
+        <span className="text-white text-xs sm:text-sm font-mono">
+          {app.friendlyName}
+        </span>
       </div>
 
       {/* Twitter Link */}
@@ -75,11 +77,14 @@ export function AppRow({ app }: { app: AppRecord }) {
             className="text-gray-500 hover:text-gray-300 transition-colors text-xs flex items-center gap-1 flex-row"
             aria-label={`Follow ${app.friendlyName} on Twitter`}
           >
-            <span className="sm:text-xs text-[8px]">
+            <span className="hidden sm:inline text-xs">
               ask <span className="text-white">@{app.twitter}</span> to bump
               Electron
             </span>
-            <TwitterIcon className="size-4 ml-2" />
+            <span className="sm:hidden">
+              ask <span className="text-white">@{app.twitter}</span>
+            </span>
+            <TwitterIcon className="size-3 sm:size-4 ml-1 sm:ml-2" />
           </Link>
         )}
       </div>
