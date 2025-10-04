@@ -19,6 +19,9 @@ import { OnePassword } from "./1password";
 import { Bitwarden } from "./bitwarden";
 import { Obsidian } from "./obsidian";
 import { BalenaEtcher } from "./balena-etcher";
+import { SaleaLogic } from "./salea-logic";
+import { NotionCalendar } from "./notion-calendar";
+import { NotionMail } from "./notion-mail";
 
 import type { AppMeta } from "../../types";
 
@@ -43,6 +46,9 @@ export const APPS: AppMeta[] = [
   Bruno,
   BalenaEtcher,
   Bitwarden,
+  SaleaLogic,
+  NotionCalendar,
+  NotionMail,
   Obsidian,
 ];
 export default APPS;
