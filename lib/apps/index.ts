@@ -28,6 +28,7 @@ import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
 import { LMStudio } from "./lmstudio";
 import { Windsurf } from "./windsurf";
 import { Dropbox } from "./dropbox";
+import { Kiro } from "./kiro";
 
 import type { AppMeta } from "../../types";
 
@@ -62,5 +63,6 @@ export const APPS: AppMeta[] = [
   Hey,
   GitKraken,
   Dropbox,
+  Kiro,
 ];
 export default APPS;
