@@ -7,7 +7,7 @@ export const NotionMail: AppMeta = {
   friendlyName: "Notion Mail",
   twitter: "notion",
   async checkIsFixed() {
-    const url = "https://www.notion.com/product/mail/download";
+    const url = "https://www.notion.com/mail/desktop/mac/download";
     const pat = "_cornerMask";
     const result: { found: boolean; pos?: number } | null | undefined =
       await findPattern(url, pat);
