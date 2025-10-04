@@ -5,7 +5,6 @@ import { Bruno } from "./bruno";
 import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
 import { Figma } from "./figma";
-import { FigmaBeta } from "./figma-beta";
 import { GitHubDesktop } from "./github-desktop";
 import { Notion } from "./notion";
 import { PocketCasts } from "./pocket-casts";
