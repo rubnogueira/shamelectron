@@ -11,6 +11,8 @@ import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
 import { Figma } from "./figma";
 import { GitHubDesktop } from "./github-desktop";
+import { Hey } from "./hey";
+import { GitKraken } from "./gitkraken";
 import { Logseq } from "./logseq";
 import { Notion } from "./notion";
 import { NotionCalendar } from "./notion-calendar";
@@ -56,5 +58,7 @@ export const APPS: AppMeta[] = [
   Windsurf,
   Logseq,
   LMStudio,
+  Hey,
+  GitKraken,
 ];
 export default APPS;
