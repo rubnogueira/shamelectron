@@ -23,6 +23,7 @@ import { Signal } from "./signal";
 import { Slack } from "./slack";
 import { VisualStudioCode } from "./visual-studio-code";
 import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
+import { LMStudio } from "./lmstudio";
 import { Windsurf } from "./windsurf";
 
 import type { AppMeta } from "../../types";
@@ -54,5 +55,6 @@ export const APPS: AppMeta[] = [
   VisualStudioCodeInsiders,
   Windsurf,
   Logseq,
+  LMStudio,
 ];
 export default APPS;
