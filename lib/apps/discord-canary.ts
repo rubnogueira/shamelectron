@@ -7,7 +7,7 @@ export const DiscordCanary: AppMeta = {
   friendlyName: "Discord (Canary)",
   twitter: "discord",
   async checkIsFixed() {
-    const url = "https://discord.com/api/download?platform=osx";
+    const url = "https://canary.discord.com/api/download/canary?platform=osx";
     const pat = "_cornerMask";
     const result: { found: boolean; pos?: number } | null | undefined =
       await findPattern(url, pat);
