@@ -1,4 +1,5 @@
 import { OnePassword } from "./1password";
+import { DockerDesktop } from "./docker";
 import { ArduinoIDE } from "./arduino-ide";
 import { BalenaEtcher } from "./balena-etcher";
 import { Beeper } from "./beeper";
@@ -45,6 +46,7 @@ export const APPS: AppMeta[] = [
   DiscordCanary,
   Figma,
   GitHubDesktop,
+  DockerDesktop,
   Notion,
   NotionCalendar,
   NotionMail,
