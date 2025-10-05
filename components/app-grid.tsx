@@ -14,7 +14,6 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
   ).length;
   const unknownCount = apps.filter((app) => app.isFixed === "unknown").length;
   const totalCount = apps.length;
-  const fixedPercentage = Math.round((fixedCount / totalCount) * 100);
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -70,7 +69,7 @@ export function AppGrid({ apps }: { apps: AppRecord[] }) {
                     Status Overview
                   </h2>
                   <div className="text-xs text-gray-400 font-mono">
-                    {totalCount} total applications tracked
+                    {totalCount} total apps tracked
                   </div>
                 </div>
                 <div className="text-right">
