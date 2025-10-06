@@ -1,6 +1,6 @@
-import { MongoDBCompass } from "./lib/apps/mongodb-compass";
+import { Tabby } from "./lib/apps/tabby";
 
-const app = MongoDBCompass;
+const app = Tabby;
 
 const result = await app.checkIsFixed();
 

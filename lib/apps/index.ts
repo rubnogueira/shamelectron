@@ -21,6 +21,7 @@ import { LMStudio } from "./lmstudio";
 import { Logseq } from "./logseq";
 import { Mattermost } from "./mattermost";
 import { MongoDBCompass } from "./mongodb-compass";
+import { Tabby } from "./tabby";
 import { SuperProductivity } from "./super-productivity";
 import { Notion } from "./notion";
 import { NotionCalendar } from "./notion-calendar";
@@ -60,6 +61,7 @@ export const APPS: AppMeta[] = [
   Logseq,
   Mattermost,
   MongoDBCompass,
+  Tabby,
   Notion,
   SuperProductivity,
   NotionCalendar,
