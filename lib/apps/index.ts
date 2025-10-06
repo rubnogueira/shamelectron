@@ -1,5 +1,4 @@
 import { OnePassword } from "./1password";
-import { DockerDesktop } from "./docker";
 import { ArduinoIDE } from "./arduino-ide";
 import { BalenaEtcher } from "./balena-etcher";
 import { Beeper } from "./beeper";
@@ -10,12 +9,17 @@ import { Cluely } from "./cluely";
 import { Cursor } from "./cursor";
 import { Discord } from "./discord";
 import { DiscordCanary } from "./discord-canary";
+import { DockerDesktop } from "./docker";
+import { Dropbox } from "./dropbox";
 import { Element } from "./element";
 import { Figma } from "./figma";
 import { GitHubDesktop } from "./github-desktop";
-import { Hey } from "./hey";
 import { GitKraken } from "./gitkraken";
+import { Hey } from "./hey";
+import { Kiro } from "./kiro";
+import { LMStudio } from "./lmstudio";
 import { Logseq } from "./logseq";
+import { Mattermost } from "./mattermost";
 import { Notion } from "./notion";
 import { NotionCalendar } from "./notion-calendar";
 import { NotionMail } from "./notion-mail";
@@ -27,10 +31,7 @@ import { Signal } from "./signal";
 import { Slack } from "./slack";
 import { VisualStudioCode } from "./visual-studio-code";
 import { VisualStudioCodeInsiders } from "./visual-studio-code-insiders";
-import { LMStudio } from "./lmstudio";
 import { Windsurf } from "./windsurf";
-import { Dropbox } from "./dropbox";
-import { Kiro } from "./kiro";
 
 import type { AppMeta } from "../../types";
 
@@ -45,10 +46,17 @@ export const APPS: AppMeta[] = [
   Cursor,
   Discord,
   DiscordCanary,
+  DockerDesktop,
+  Dropbox,
+  Element,
   Figma,
   GitHubDesktop,
-  DockerDesktop,
-  Element,
+  GitKraken,
+  Hey,
+  Kiro,
+  LMStudio,
+  Logseq,
+  Mattermost,
   Notion,
   NotionCalendar,
   NotionMail,
@@ -62,11 +70,5 @@ export const APPS: AppMeta[] = [
   VisualStudioCode,
   VisualStudioCodeInsiders,
   Windsurf,
-  Logseq,
-  LMStudio,
-  Hey,
-  GitKraken,
-  Dropbox,
-  Kiro,
 ];
 export default APPS;
