@@ -78,7 +78,7 @@ export function AppRow({ app }: { app: AppRecord }) {
             href={
               `https://x.com/intent/tweet?text=` +
               encodeURIComponent(
-                `please bump Electron to fix MacOS 26 performance issue @${app.twitter}`
+                `Please bump Electron to fix MacOS 26 performance issue @${app.twitter} https://github.com/electron/electron/pull/48376`
               )
             }
             target="_blank"
