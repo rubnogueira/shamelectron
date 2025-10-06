@@ -20,6 +20,8 @@ import { Kiro } from "./kiro";
 import { LMStudio } from "./lmstudio";
 import { Logseq } from "./logseq";
 import { Mattermost } from "./mattermost";
+import { MongoDBCompass } from "./mongodb-compass";
+import { SuperProductivity } from "./super-productivity";
 import { Notion } from "./notion";
 import { NotionCalendar } from "./notion-calendar";
 import { NotionMail } from "./notion-mail";
@@ -57,7 +59,9 @@ export const APPS: AppMeta[] = [
   LMStudio,
   Logseq,
   Mattermost,
+  MongoDBCompass,
   Notion,
+  SuperProductivity,
   NotionCalendar,
   NotionMail,
   Obsidian,

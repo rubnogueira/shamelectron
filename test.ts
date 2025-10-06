@@ -1,6 +1,6 @@
-import { DockerDesktop } from "./lib/apps/docker";
+import { MongoDBCompass } from "./lib/apps/mongodb-compass";
 
-const app = DockerDesktop;
+const app = MongoDBCompass;
 
 const result = await app.checkIsFixed();
 
