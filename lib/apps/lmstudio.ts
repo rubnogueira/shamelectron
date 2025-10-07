@@ -17,8 +17,7 @@ export const LMStudio: AppMeta = {
     const build = versionData?.build;
     const url = `https://installers.lmstudio.ai/darwin/arm64/${versionStr}-${build}/LM-Studio-${versionStr}-${build}-arm64.dmg`;
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };

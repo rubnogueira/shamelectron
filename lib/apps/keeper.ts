@@ -7,10 +7,10 @@ export const Keeper: AppMeta = {
   friendlyName: "Keeper",
   twitter: "keepersecurity",
   async checkIsFixed() {
-    const url = "https://www.keepersecurity.com/desktop_electron/Darwin/KeeperSetup.dmg";
+    const url =
+      "https://www.keepersecurity.com/desktop_electron/Darwin/KeeperSetup.dmg";
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };

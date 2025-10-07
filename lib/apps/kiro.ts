@@ -15,8 +15,7 @@ export const Kiro: AppMeta = {
       .then((data) => data?.releases?.[0]?.updateTo.url);
 
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };

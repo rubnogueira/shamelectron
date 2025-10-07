@@ -9,8 +9,7 @@ export const Figma: AppMeta = {
   async checkIsFixed() {
     const url = "https://desktop.figma.com/mac-arm/Figma.zip";
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };

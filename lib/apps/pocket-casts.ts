@@ -9,8 +9,7 @@ export const PocketCasts: AppMeta = {
   async checkIsFixed() {
     const url = "https://pocketcasts.com/get/mac";
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };

@@ -9,8 +9,7 @@ export const Discord: AppMeta = {
   async checkIsFixed() {
     const url = "https://discord.com/api/download?platform=osx";
     const pat = "_cornerMask";
-    const result: { found: boolean; pos?: number } | null | undefined =
-      await findPattern(url, pat);
+    const result = await findPattern(url, pat);
     console.log(result);
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
