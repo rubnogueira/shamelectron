@@ -8,7 +8,6 @@ import { Claude } from "./claude";
 import { Cluely } from "./cluely";
 import { Cursor } from "./cursor";
 import { Discord } from "./discord";
-import { DiscordCanary } from "./discord-canary";
 import { DockerDesktop } from "./docker";
 import { Dropbox } from "./dropbox";
 import { Element } from "./element";
@@ -49,7 +48,6 @@ export const APPS: AppMeta[] = [
   Cluely,
   Cursor,
   Discord,
-  DiscordCanary,
   DockerDesktop,
   Dropbox,
   Element,
