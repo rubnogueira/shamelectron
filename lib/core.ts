@@ -1,5 +1,5 @@
 import { FixedStatus, type AppMeta, type AppRecord } from "@/types";
-import APPS from "@/lib/apps";
+import { APPS } from "@/lib/apps";
 
 type AppInfo = {
   id: string;

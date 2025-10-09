@@ -1,5 +1,5 @@
 import { core } from "@/lib/core";
-import APPS from "@/lib/apps";
+import { APPS } from "@/lib/apps";
 import { FixedStatus, type AppRecord } from "@/types";
 import { AppGrid } from "@/components/app-grid";
 

@@ -5,8 +5,10 @@
   "license": "MIT",
   "packageManager": "bun@1.2.23",
   "scripts": {
+    "predev": "bun run scripts/generate-apps-index.ts",
     "dev": "bunx --bun next dev",
     "dev:no-update": "NO_UPDATE=true bunx --bun next dev",
+    "prebuild": "bun run scripts/generate-apps-index.ts",
     "build": "bunx --bun next build",
     "start": "bunx --bun next start",
     "lint": "bunx --bun next lint"
