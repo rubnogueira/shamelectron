@@ -1,6 +1,6 @@
-import { Tabby } from "./lib/apps/tabby";
+import { NotionCalendar } from "./lib/apps/notion-calendar";
 
-const app = Tabby;
+const app = NotionCalendar;
 
 const result = await app.checkIsFixed();
 

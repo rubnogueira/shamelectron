@@ -1,5 +1,5 @@
-import APPS from "../apps";
-import { FixedStatus } from "../../types";
+import { APPS } from "../apps";
+import { FixedStatus } from "@/types";
 
 type InMsg = { id: string };
 type OutMsg =

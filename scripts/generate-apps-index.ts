@@ -6,24 +6,20 @@ const files = Array.from(glob.scanSync(appsDir))
   .filter((f) => !f.match(/index(\.ts|\.d\.ts)$/) && !f.endsWith(".d.ts"))
   .sort();
 
-const exportRegex = /export\s+const\s+(\w+)\s*:\s*AppMeta\b/;
-
-// Read all files in parallel for speed
-const fileReads = files.map((relPath) => {
-  const absPath = `${appsDir}/${relPath}`;
-  return Bun.file(absPath)
-    .text()
-    .then((src) => ({ relPath, src }));
-});
-
-const fileContents = await Promise.all(fileReads);
+// Dynamically import all modules and collect their exports
+const fileContents = await Promise.all(
+  files.map(async (relPath) => {
+    const absPath = `${appsDir}/${relPath}`;
+    const mod = await import(absPath);
+    return { relPath, mod };
+  })
+);
 
 const exportMap: Array<{ symbol: string; importPath: string }> = [];
 
-for (const { relPath, src } of fileContents) {
-  const m = exportRegex.exec(src);
-  if (!m) continue;
-  const symbol = m[1]!;
+for (const { relPath, mod } of fileContents) {
+  const symbol = Object.keys(mod).find((k) => k !== "__esModule");
+  if (!symbol) continue;
   const base = relPath.replace(/\.ts$/, "");
   exportMap.push({ symbol, importPath: `./${base}` });
 }
@@ -42,7 +38,9 @@ const content = `// AUTO-GENERATED AUTOMATICALLY BEFORE DEV/BUILD
 // Generated at: ${new Date().toISOString()}
 
 ${imports}
+
 import type { AppMeta } from "../../types";
+
 export const APPS: AppMeta[] = [\n${items}\n].sort((a, b) => a.id.localeCompare(b.id));
 `;
 
