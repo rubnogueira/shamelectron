@@ -44,7 +44,7 @@ jobs:
       - name: Install lzfse and lzma
         run: |
           sudo apt-get update
-          sudo apt-get install -y lzfse lzma
+          sudo apt-get install -y lzfse lzma libarchive-tools ripgrep
 
       - name: Build
         run: bun run build

@@ -9,7 +9,7 @@ type AppInfo = {
 
 // Singleton Redis client for the build process
 let redisClient: Bun.RedisClient | null = null;
-async function getRedisClient() {
+export async function getRedisClient() {
   if (redisClient) {
     return redisClient;
   }
