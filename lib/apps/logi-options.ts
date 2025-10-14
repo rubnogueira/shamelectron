@@ -1,7 +1,6 @@
 import { FixedStatus, type AppMeta } from "@/types";
 import { $ } from "bun";
 import { tmpdir } from "node:os";
-import { getRedisClient } from "../core";
 
 export const LogiOptions: AppMeta = {
   icon: "https://cdn.brandfetch.io/idX2nqEtNo/w/128/h/128/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1756407828651",
@@ -19,6 +18,9 @@ export const LogiOptions: AppMeta = {
     if (!res.ok) throw new Error(`Failed to download: ${res.statusText}`);
 
     {
+      const redisClient = await import("../core").then((m) =>
+        m.getRedisClient()
+      );
       /**
        * Check if the content length is the same as the previous download
        * We can assume that the content length is the same if it's the same as the previous download,
@@ -27,7 +29,6 @@ export const LogiOptions: AppMeta = {
        */
       const contentLength = String(res.headers.get("content-length"));
       const redisKey = `app:${this.id}:content-length`;
-      const redisClient = await getRedisClient();
       const oldContentLength = await redisClient.get(redisKey);
       if (
         contentLength &&
