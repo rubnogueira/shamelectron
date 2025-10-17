@@ -4,7 +4,7 @@ import { FixedStatus, type AppMeta } from "../../types";
 export const Openmtp: AppMeta = {
   icon: "https://openmtp.ganeshrvel.com/favicon.ico",
   id: "openmtp",
-  friendlyName: "openmtp",
+  friendlyName: "OpenMTP",
   twitter: "openmtp",
   async checkIsFixed() {
     const url = await fetch(
