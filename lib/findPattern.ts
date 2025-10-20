@@ -352,8 +352,7 @@ async function findPatternInZip(
     method: options.useGetCheck ? "GET" : "HEAD",
     headers: {
       "Accept-Encoding": "identity",
-      ...(options.useGetCheck ? { "Range": "bytes=0-0" } : {}),
-    }
+    },
   });
 
   if (!headResp.ok) {
@@ -669,8 +668,7 @@ async function findPatternInDmg(
     method: options.useGetCheck ? "GET" : "HEAD",
     headers: {
       "Accept-Encoding": "gzip",
-      ...(options.useGetCheck ? { "Range": "bytes=0-0" } : {}),
-    }
+    },
   });
 
   const storedEncoding = headResp.headers.get("x-goog-stored-content-encoding");
@@ -1174,7 +1172,7 @@ export async function findPattern(
   patternString: string,
   options: {
     useGetCheck: boolean;
-  } = {useGetCheck: false}
+  } = { useGetCheck: false }
 ): Promise<SearchResult> {
   const pattern = new TextEncoder().encode(patternString);
 
@@ -1188,7 +1186,6 @@ export async function findPattern(
     method: options.useGetCheck ? "GET" : "HEAD",
     headers: {
       "Accept-Encoding": "gzip",
-      ...(options.useGetCheck ? { "Range": "bytes=0-0" } : {}),
     },
     redirect: "follow",
   });

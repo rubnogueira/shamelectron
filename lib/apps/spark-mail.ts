@@ -17,7 +17,7 @@ export const SparkMail: AppMeta = {
       );
 
     const pat = "_cornerMask";
-    const result = await findPattern(url!, pat, {useGetCheck: true});
+    const result = await findPattern(url!, pat, { useGetCheck: true });
     return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
   },
 };
