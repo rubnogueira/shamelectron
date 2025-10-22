@@ -15,7 +15,7 @@ export const RancherDesktop: AppMeta = {
           data.assets.find(
             (asset: { name: string }) =>
               asset.name.startsWith("Rancher.Desktop") &&
-              asset.name.endsWith(".dmg")
+              asset.name.endsWith("aarch64.zip")
           )?.browser_download_url
       );
     const pat = "_cornerMask";

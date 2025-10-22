@@ -8,7 +8,7 @@ export const PodmanDesktop: AppMeta = {
   twitter: "podman-desktop",
   async checkIsFixed() {
     const url = await fetch(
-      "https://api.github.com/repos/podman-sandbox/podman-desktop/releases/latest"
+      "https://api.github.com/repos/podman-desktop/podman-desktop/releases/latest"
     )
       .then((res) => res.json())
       .then(
@@ -16,7 +16,7 @@ export const PodmanDesktop: AppMeta = {
           data.assets.find(
             (asset: { name: string }) =>
               asset.name.startsWith("podman-desktop") &&
-              asset.name.endsWith(".dmg")
+              asset.name.endsWith("-arm64.dmg")
           )?.browser_download_url
       );
     const pat = "_cornerMask";
