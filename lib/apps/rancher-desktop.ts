@@ -5,6 +5,7 @@ export const RancherDesktop: AppMeta = {
   icon: "https://rancherdesktop.io/images/icon-rancher-desktop.svg",
   id: "rancher-desktop",
   friendlyName: "Rancher Desktop",
+  twitter: "Rancher_Labs",
   async checkIsFixed() {
     const url = await fetch(
       "https://api.github.com/repos/rancher-sandbox/rancher-desktop/releases/latest"

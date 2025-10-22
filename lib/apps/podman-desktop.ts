@@ -5,7 +5,7 @@ export const PodmanDesktop: AppMeta = {
   icon: "https://podman-desktop.io/img/logo.svg",
   id: "podman-desktop",
   friendlyName: "Podman Desktop",
-  twitter: "podman-desktop",
+  twitter: "Podman_io",
   async checkIsFixed() {
     const url = await fetch(
       "https://api.github.com/repos/podman-desktop/podman-desktop/releases/latest"
