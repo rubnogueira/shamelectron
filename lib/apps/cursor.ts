@@ -7,10 +7,6 @@ export const Cursor: AppMeta = {
   friendlyName: "Cursor",
   twitter: "cursor_ai",
   async checkIsFixed() {
-    const url =
-      "https://api2.cursor.sh/updates/download/golden/darwin-arm64/cursor/latest";
-    const pat = "_cornerMask";
-    const result = await findPattern(url, pat);
-    return result?.found ? FixedStatus.NOT_FIXED : FixedStatus.FIXED;
+    return FixedStatus.FIXED; // 2.0+ is fixed with a patch
   },
 };
